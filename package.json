@@ -1,14 +1,14 @@
 {
-  "name": "Gulp-Starter",
+  "name": "incomingjest-default",
   "version": "0.0.1",
   "description": "",
   "main": "gulpfile.js",
-  "author": "Donovan Hutchinson, CSSAnimation.rocks",
+  "author": "Yusuf Yalim, yusufyalim@gmail.com",
   "license": "MIT",
-  "homepage": "https://cssanimation.rocks",
+  "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cssanimation/gulp-sass-starter.git"
+    "url": ""
   },
   "devDependencies": {
     "browser-sync": "^2.7.5",
@@ -20,7 +20,7 @@
     "gulp-concat": "^2.5.2",
     "gulp-cssshrink": "^0.1.4",
     "gulp-gh-pages": "^0.5.1",
-    "gulp-imagemin": "^2.2.1",
+    "gulp-imagemin": "^4.1.0",
     "gulp-jshint": "^1.11.0",
     "gulp-minify-css": "^1.1.1",
     "gulp-notify": "^2.2.0",
@@ -28,6 +28,11 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.1",
     "gulp-size": "^1.2.1",
-    "gulp-uglify": "^1.2.0"
+    "gulp-uglify": "^1.2.0",
+    "gulp.spritesmith": "^6.9.0",
+    "jquery": "^3.3.1",
+    "video.js": "^7.0.3",
+    "webpack-stream": "^4.0.3"
   }
 }
+

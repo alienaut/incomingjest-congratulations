@@ -6,9 +6,207 @@
   <title>New site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="stylesheets/screen.css">
+  <style id="scroll-disabler">
+    html, body {
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
-  <h1>Breathe</h1>
-  <a href="https://github.com/cssanimation/gulp-sass-starter/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+  <div id="gesture-id" style="display: none;" data-gesture-id="123456"></div>
+  <div class="suprise-page">
+    <div class="message">
+      <p class="from">Doruk Kantarcıgil</p>
+      <p>sana jest yaptı.</p>
+    </div>
+    <a class="button jest-detail-link" href="#">Jestimi Göster</a>
+    <div class="gift"></div>
+    <div class="jestiniyap-logo"></div>
+  </div>
+
+  <!-- jest-details -->
+  <div id="jest-details" class="jest-details" style="display: none;">
+    <div class="title">
+      <p class="from">Doruk Kantarcıgil</p>
+      <p>sana Brandom.com.tr'da bir jest yaptı</p>
+    </div>
+    <div class="card">
+      <div id="slider-wrap">
+        <ul id="slider">
+          <li>
+            <div>
+              <img src="images/card.jpg" alt="Jest Image">
+              <p class="jest-title">Golden Jest Çeki - 1 Adet</p>
+              <p class="days">Kalan Gün Sayısı: 4</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="images/card.jpg" alt="Jest Image">
+              <p class="jest-title">Silver Jest Çeki - 1 Adet</p>
+              <p class="days">Kalan Gün Sayısı: 4</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="images/card.jpg" alt="Jest Image">
+              <p class="jest-title">Red Jest Çeki - 1 Adet</p>
+              <p class="days">Kalan Gün Sayısı: 4</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="images/card.jpg" alt="Jest Image">
+              <p class="jest-title">Blue Jest Çeki - 1 Adet</p>
+              <p class="days">Kalan Gün Sayısı: 4</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="images/card.jpg" alt="Jest Image">
+              <p class="jest-title">Bronze Jest Çeki - 1 Adet</p>
+              <p class="days">Kalan Gün Sayısı: 4</p>
+            </div>
+          </li>
+        </ul>
+        <div id="pagination-wrap">
+          <ul>
+          </ul>
+        </div> 
+      </div>
+
+    </div>
+    <div class="message">
+      <p class="message-info">Doruk Kantarcigil sana bir mesaj gönderdi</p>
+      <p class="message-date">17.04.2018</p>
+      <p class="message-content">"Bu ekip seninle güzel :) Bizimle çalışmayı tercih ettiğin için teşekkür ederiz. Bu yıl sana bolca mutluluk ve başarı getirsin."</p>
+      <div class="photo">
+        <p>Foto</p>
+        <img src="images/doge.jpeg" alt="Jest Photo">
+      </div>
+      <div class="video">
+          <video 
+            id="video-player" 
+            preload="metadata" 
+            class="video-js vjs-16-9" 
+            controls 
+            data-setup='{ "controls": true, "autoplay": false, "preload": "metadata" }'>
+            <source src="/videos/test.mp4" type='video/mp4'>
+          </video>
+        </div>
+    </div>
+    <div class="ajax-success" style="display: none">
+      <p>Talebiniz bize iletildi.</p>
+    </div>
+    <div class="question">
+      <p>Bu jesti nasıl kullanmak istiyorsun?</p>
+    </div>
+    <div class="options">
+      <ul class="accordion" id="accordion">
+        <li class="accordion__list">
+          <div class="link">
+            <span class="link__title">Kargo İstiyorum</span>
+            <div class="down"></div>
+          </div>
+          <div class="content">
+            <p>Jestin bulunduğunuz yere gelmesi için adresinizi giriniz.</p>
+            <form class="address" name="delivery-cargo" action="#">
+              <textarea id="address" name="address" col="20" placeholder="Adres bilgilerinizi girin." required></textarea>
+              <button class="button">Kargo İstiyorum</button>
+            </form>
+          </div>
+        </li>
+        <li class="accordion__list">
+          <div class="link">
+            <span class="link__title">Telefonla Aranmak İstiyorum</span>
+            <div class="down"></div>
+          </div>
+          <div class="content">
+            <p>Seni ne zaman aramamız istediğine dair bir notun varsa bizimle paylaşmana seviniriz.</p>
+            <form class="note" name="delivery-call-me" action="#">
+              <textarea id="address" name="note" col="20" placeholder="Notunuzu giriniz."></textarea>
+              <button class="button">Notu Kaydet</button>
+            </form>
+            <p class="agreement"><span>*</span> Jestiniyap Hediye Çeki'nin benimle iletişim kurmasını kabul ediyorum.</p>
+          </div>
+        </li>
+        <li class="accordion__list">
+          <div class="link">
+            <span class="link__title">Ben Telefon Ederim</span>
+            <div class="down"></div>
+          </div>
+          <div class="content">
+            <p>Mağazaya ulaşabileceğin adres ve telefon numaraları aşağıda belirtilmiştir.</p>
+            <div class="access">
+              <p class="bold">Çağrı Merkezi</p>
+              <p><span class="bold">Adres:</span> İstanbul / Türkiye</p>
+              <p><span class="bold">Tel:</span>  <a href="tel:0850-811-12-13">0850 811 12 13</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="accordion__list">
+          <div class="link">
+            <span class="link__title">Mağazadan Almak İstiyorum</span>
+            <div class="down"></div>
+          </div>
+          <div class="content">
+            <p>Mağazaya ulaşabileceğin adres ve telefon numaraları aşağıda belirtilmiştir.</p>
+            <div class="access">
+              <p class="bold">Çağrı Merkezi</p>
+              <p><span class="bold">Adres:</span> İstanbul / Türkiye</p>
+              <p><span class="bold">Tel:</span>  <a href="tel:0850-811-12-13">0850 811 12 13</a></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="jest-code">
+      <p class="label">JEST KODU:</p>
+      <p class="jest-code">HSGRDGH13566NP</p>
+    </div>
+    <div class="how-to-get-jest">
+      <div class="circle">
+          <div class="present"></div>
+      </div>
+      <a class="open" href="#">Jestinden Nasıl Yararlanırsın?</a>
+    </div>
+    <div class="mest">
+      <p class="rejest-success" style="display: none;">Mest olduğunu ilettik :)</p>
+      <p class="label">Tıkla <span>Doruk Kantarcıgil</span> mest olduğunu öğrensin.</p>
+      <a class="button rejest" href="#">Mest Oldum</a>
+    </div>
+
+    <div class="mobile-app">
+      <div class="jestiniyap-logo"></div>
+      <p>Uygulamayı indir, sen de</p>
+      <p class="jestiniyap">jestiniyap!</p>   
+      <div class="store">
+        <a href="https://itunes.apple.com/tr/app/jestiniyap/id1047618204?l=tr&mt=8" class="app-store"></a>
+        <div class="divider"></div>
+        <a href="https://play.google.com/store/apps/details?id=com.smm.jestiniyap&hl=tr" class="google-play"></a>
+      </div>
+      <p class="phone">Jestiniyap Destek Hattı</p>
+      <p class="phone">0850 811 12 13</p>
+    </div>
+
+    <div class="bottom"></div>
+  </div>
+  <!-- end of the jest-details -->
+  <!-- popup elements and close button   -->
+  <div class="popup">
+    <div class="present-wrapper">
+        <div class="present"></div>
+    </div>
+    <p class="title">Jestinden Nasıl Yararlanırsın?</p>
+    <p class="description">Tebrikler!</p>
+    <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <p class="description">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+    <p class="description">Lorem Ipsum passages, and more recently with desktop publishing software like.</p>
+  </div>
+  <a class="close" href=""></a>
+  <!-- end of popup elements and close button -->
+
+  <script src="javascripts/app.js"></script>
 </body>
 </html>
+

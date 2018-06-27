@@ -1,0 +1,123 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$app-store-name: 'app-store';
+$app-store-x: 171px;
+$app-store-y: 29px;
+$app-store-offset-x: -171px;
+$app-store-offset-y: -29px;
+$app-store-width: 32px;
+$app-store-height: 38px;
+$app-store-total-width: 416px;
+$app-store-total-height: 184px;
+$app-store-image: '../images/sprite.png';
+$app-store: (171px, 29px, -171px, -29px, 32px, 38px, 416px, 184px, '../images/sprite.png', 'app-store', );
+$gift-name: 'gift';
+$gift-x: 0px;
+$gift-y: 0px;
+$gift-offset-x: 0px;
+$gift-offset-y: 0px;
+$gift-width: 136px;
+$gift-height: 184px;
+$gift-total-width: 416px;
+$gift-total-height: 184px;
+$gift-image: '../images/sprite.png';
+$gift: (0px, 0px, 0px, 0px, 136px, 184px, 416px, 184px, '../images/sprite.png', 'gift', );
+$google-play-name: 'google-play';
+$google-play-x: 136px;
+$google-play-y: 29px;
+$google-play-offset-x: -136px;
+$google-play-offset-y: -29px;
+$google-play-width: 35px;
+$google-play-height: 38px;
+$google-play-total-width: 416px;
+$google-play-total-height: 184px;
+$google-play-image: '../images/sprite.png';
+$google-play: (136px, 29px, -136px, -29px, 35px, 38px, 416px, 184px, '../images/sprite.png', 'google-play', );
+$jestiniyap-logo-name: 'jestiniyap-logo';
+$jestiniyap-logo-x: 136px;
+$jestiniyap-logo-y: 0px;
+$jestiniyap-logo-offset-x: -136px;
+$jestiniyap-logo-offset-y: 0px;
+$jestiniyap-logo-width: 280px;
+$jestiniyap-logo-height: 29px;
+$jestiniyap-logo-total-width: 416px;
+$jestiniyap-logo-total-height: 184px;
+$jestiniyap-logo-image: '../images/sprite.png';
+$jestiniyap-logo: (136px, 0px, -136px, 0px, 280px, 29px, 416px, 184px, '../images/sprite.png', 'jestiniyap-logo', );
+$spritesheet-width: 416px;
+$spritesheet-height: 184px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($app-store, $gift, $google-play, $jestiniyap-logo, );
+$spritesheet: (416px, 184px, '../images/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -1,0 +1,78 @@
+$width: 260px;
+$height: 250px;
+
+#slider-wrap{
+	width: 260px;
+	height: $height;
+	position:relative;
+	overflow:hidden;
+}
+
+#slider-wrap ul#slider{
+  list-style: none;
+	width: $width;
+	height: 100%;
+  margin: 0;
+  padding: 0;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#slider-wrap ul#slider li{
+	float:left;
+	position:relative;
+	width: $width;
+	height: $height - 10px;
+}
+
+#slider-wrap ul#slider li > div{
+  padding: 10px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+/*bar*/
+#pagination-wrap {
+  min-width:20px;
+  margin-top: $height - 20px;
+	margin-left: auto; 
+	margin-right: auto;
+	height: 15px;
+	position: relative;
+	text-align: center;
+}
+
+#pagination-wrap ul {
+  width:100%;
+  padding: 0;
+}
+
+#pagination-wrap ul li{
+	margin: 0 4px;
+	display: inline-block;
+	width:12px;
+	height:12px;
+	border-radius :50%;
+	background: #fff;
+	opacity :0.5;
+	position:relative;
+}
+
+#pagination-wrap ul li.active {
+  width:12px;
+  height:12px;
+	opacity:1;
+	box-shadow:rgba(0,0,0,0.1) 1px 1px 0px;
+}
+
+/*ANIMATION*/
+#slider-wrap ul, #pagination-wrap ul li{
+	-webkit-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-moz-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-o-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-ms-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	transition: all 0.3s cubic-bezier(1,.01,.32,1);	
+}
+
